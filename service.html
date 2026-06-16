@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css"/>
+  <title>Nos Services - Gozo Design</title>
+</head>
+<body>
+
+  <header>
+    <div class="nav-bande">
+      <div class="logo-container">
+        <img src="logo_gozo.jpg" alt="Gozo Design Logo" class="header-logo-img">
+        <div class="logo-text">
+          <p>GOZO<span>DESIGN</span></p>
+        </div>
+      </div>
+      
+      <nav class="nav-links-desktop">
+        <a href="index.html">Accueil</a>
+        <a href="service.html" class="active">Services</a>
+        <a href="propos.html">À Propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="burger" id="burgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="sidebar" id="sideMenu">
+    <div class="close-btn" id="closeBtn">&times;</div>
+    <nav class="sidebar-links">
+      <a href="index.html">Accueil</a>
+      <a href="service.html">Services</a>
+      <a href="propos.html">À Propos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="accueil small-hero" style="height: 35vh;">
+    <h1>Nos Services</h1>
+    <p class="subtitle" style="color: white; font-size: 1.2rem;">Découvrez notre expertise en communication visuelle</p>
+  </div>
+
+  <section class="section-services">
+    <div class="group">
+      
+      <div class="cat" style="align-items: flex-start; text-align: left;">
+        <div class="icon-wrapper" style="align-self: center;">
+          <img src="infographie.png" alt="Infographie">
+        </div>
+        <h3 style="align-self: center; margin-bottom: 20px;">Infographie</h3>
+        <p style="margin-bottom: 15px; color: #555;">Nous concevons des visuels percutants pour votre marque :</p>
+        <ul class="liste-formation">
+          <li>Création de logos et identités visuelles</li>
+          <li>Confection des cachets personalisés</li>
+          <li>Conception de cartes de visite professionnelles</li>
+          <li>Design de flyers, affiches et dépliants</li>
+          <li>Création de maquettes publicitaires</li>
+        </ul>
+        <a href="contact.html" class="btn-voir" style="width: 100%; text-align: center;">Commander</a>
+      </div>
+
+      <div class="cat" style="align-items: flex-start; text-align: left;">
+        <div class="icon-wrapper" style="align-self: center;">
+          <img src="sérigraphie.png" alt="Sérigraphie">
+        </div>
+        <h3 style="align-self: center; margin-bottom: 20px;">Sérigraphie</h3>
+        <p style="margin-bottom: 15px; color: #555;">Une impression durable sur tous types de textiles :</p>
+        <ul class="liste-formation">
+          <li>Marquage sur t-shirts et polos (personnels ou d'entreprise)</li>
+          <li>Impression sur casquettes et uniformes de travail</li>
+          <li>Sérigraphie sur maillots de sport</li>
+          <li>Sacs en tissu (Totebags) personnalisés</li>
+        </ul>
+        <a href="contact.html" class="btn-voir" style="width: 100%; text-align: center;">Commander</a>
+      </div>
+
+      <div class="cat" style="align-items: flex-start; text-align: left;">
+        <div class="icon-wrapper" style="align-self: center;">
+          <img src="impression.png" alt="Photos et Impressions">
+        </div>
+        <h3 style="align-self: center; margin-bottom: 20px;">Photos & Impressions</h3>
+        <p style="margin-bottom: 15px; color: #555;">Des tirages et agrandissements haute définition :</p>
+        <ul class="liste-formation">
+          <li>Agrandissement de photos de famille ou d'art</li>
+          <li>Restauration et retouche de photos anciennes</li>
+          <li>Impression grand format (Banderoles, Kakemonos)</li>
+          <li>Objets personnalisés (Mugs, porte-clés)</li>
+        </ul>
+        <a href="contact.html" class="btn-voir" style="width: 100%; text-align: center;">Commander</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="contact" style="text-align: center; background: #0066cc; color: white; padding: 40px 20px; margin: 40px 5%; border-radius: 12px;">
+    <h2>Un projet sur-mesure ?</h2>
+    <p style="margin: 15px 0 25px; opacity: 0.9;">Venez nous parler de vos idées, nos experts s'occupent du reste.</p>
+    <a href="contact.html" class="btn-voir" style="background: #f3db11; color: #003366;">Contactez-nous aujourd'hui</a>
+  </section>
+
+  <footer>
+    <p>© 2026 Gozo Design. Tous droits réservés. Votre partenaire en communication visuelle.</p>
+  </footer>
+
+  <script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    const closeBtn = document.getElementById('closeBtn');
+    const overlay = document.getElementById('overlay');
+
+    if(burgerBtn) {
+      burgerBtn.addEventListener('click', () => {
+        sideMenu.classList.add('active');
+        overlay.classList.add('active');
+      });
+    }
+
+    const closeMenu = () => {
+      sideMenu.classList.remove('active');
+      overlay.classList.remove('active');
+    };
+
+    if(closeBtn) closeBtn.addEventListener('click', closeMenu);
+    if(overlay) overlay.addEventListener('click', closeMenu);
+  </script>
+
+</body>
+</html>

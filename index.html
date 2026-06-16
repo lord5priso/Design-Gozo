@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css"/>
+  <title>Gozo Design - Infographie, Sérigraphie & Impression</title>
+</head>
+<body>
+
+  <header>
+    <div class="nav-bande">
+      <div class="logo-container">
+        <img src="logo_gozo.jpg" alt="Gozo Design Logo" class="header-logo-img">
+        <div class="logo-text">
+          <p>GOZO<span>DESIGN</span></p>
+        </div>
+      </div>
+      
+      <nav class="nav-links-desktop">
+        <a href="index.html">Accueil</a>
+        <a href="service.html">Services</a>
+        <a href="propos.html">À Propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="burger" id="burgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="sidebar" id="sideMenu">
+    <div class="close-btn" id="closeBtn">&times;</div>
+    <nav class="sidebar-links">
+      <a href="index.html">Accueil</a>
+      <a href="service.html">Services</a>
+      <a href="propos.html">À Propos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  <main>
+    <div class="accueil">
+      <h1>Bien venu chez Nous</h1>
+      <h3>Infographie professionnelle, Sérigraphie de qualité & Impressions grand format</h3>
+      <a href="contact.html" class="btn-voir" style="margin-top: 25px; padding: 12px 30px;">Contactez Nous</a>
+    </div>
+
+    <section class="section-services">
+      <h1>Nos Domaines d'Expertise</h1>
+      <p style="color: #666; margin-bottom: 40px;">Des solutions visuelles uniques pour booster votre communication.</p>
+      
+      <div class="group">
+        
+        <div class="cat">
+          <div class="icon-wrapper">
+            <img src="infographie.png" alt="Infographie">
+          </div>
+          <h3>Infographie</h3>
+          <p class="liste-formation" style="list-style: none; padding-left: 0; text-align: center;">
+            Création de logos originaux, cartes de visite professionnelles, flyers, affiches publicitaires et charte graphique complète.
+          </p>
+          <a href="service.html" class="btn-voir">En savoir plus</a>
+        </div>
+
+        <div class="cat">
+          <div class="icon-wrapper">
+            <img src="sérigraphie.png" alt="Sérigraphie">
+          </div>
+          <h3>Sérigraphie</h3>
+          <p class="liste-formation" style="list-style: none; padding-left: 0; text-align: center;">
+            Impression personnalisée sur t-shirts, polos, casquettes, vêtements de travail, sacs et supports textiles variés.
+          </p>
+          <a href="service.html" class="btn-voir">En savoir plus</a>
+        </div>
+
+        <div class="cat">
+          <div class="icon-wrapper">
+            <img src="impression.png" alt="Photos et Impressions">
+          </div>
+          <h3>Photos & Impression</h3>
+          <p class="liste-formation" style="list-style: none; padding-left: 0; text-align: center;">
+            Agrandissement photo haute définition, restauration d'images, tirages numériques et impressions grand format (Banderoles, Kakemonos).
+          </p>
+          <a href="service.html" class="btn-voir">En savoir plus</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Gozo Design. Tous droits réservés. Votre partenaire en communication visuelle.</p>
+  </footer>
+
+  <script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    const closeBtn = document.getElementById('closeBtn');
+    const overlay = document.getElementById('overlay');
+
+    if(burgerBtn) {
+      burgerBtn.addEventListener('click', () => {
+        sideMenu.classList.add('active');
+        overlay.classList.add('active');
+      });
+    }
+
+    const closeMenu = () => {
+      sideMenu.classList.remove('active');
+      overlay.classList.remove('active');
+    };
+
+    if(closeBtn) closeBtn.addEventListener('click', closeMenu);
+    if(overlay) overlay.addEventListener('click', closeMenu);
+  </script>
+
+</body>
+</html>

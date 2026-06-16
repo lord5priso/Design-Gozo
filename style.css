@@ -1,0 +1,532 @@
+/* --- Définition des Animations --- */
+
+/* Animation de montée et opacité */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation d'élargissement pour la barre décorative */
+@keyframes expandLine {
+  from { width: 0; }
+  to { width: 100px; }
+}
+
+/* --- Réinitialisation Globale --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Utilisation d'une police plus moderne pour le design */
+  font-family: 'Montserrat', 'Poppins', 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #ffffff; /* Fond blanc épuré pour le studio */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* --- Navigation & Header --- */
+header {
+  background: #0066cc; /* Le Bleu dynamique du logo Gozo */
+  color: white;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-bande {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+}
+
+/* Alignement du logo image + texte */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-logo-img {
+  height: 45px; /* Taille adaptée pour le header */
+  width: auto;
+  border-radius: 4px;
+}
+
+.logo-text p {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.logo-text span {
+  color: #f3db11; /* Le Jaune vif du logo Gozo */
+}
+
+/* --- Navigation Desktop (Écrans larges) --- */
+.nav-links-desktop {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-links-desktop a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Ligne jaune animée au survol */
+.nav-links-desktop a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background-color: #f3db11;
+  transition: width 0.3s ease;
+}
+
+.nav-links-desktop a:hover::after {
+  width: 100%;
+}
+
+.nav-links-desktop a:hover {
+  color: #f3db11;
+}
+
+/* --- Menu Burger (Caché sur PC) --- */
+.burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.burger span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: #f3db11;
+  border-radius: 2px;
+}
+
+/* --- La Sidebar Mobile --- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #0066cc; /* Même bleu */
+  z-index: 2000;
+  transition: 0.4s ease;
+  padding: 50px 30px;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.close-btn {
+  font-size: 2.5rem;
+  color: #f3db11;
+  cursor: pointer;
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.sidebar-links a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.sidebar-links a:hover {
+  color: #f3db11;
+  padding-left: 10px;
+}
+
+/* Voile noir */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 1500;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* --- Hero Section (Accueil) --- */
+.accueil {
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  /* Un fond dégradé bleu professionnel en attendant ton image de fond */
+  background: linear-gradient(rgba(0, 51, 102, 0.75), rgba(0, 102, 204, 0.75)), 
+              url('../image/hero-design.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.accueil h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  font-weight: 800;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Barre décorative sous le grand titre */
+.accueil h1::after {
+  content: '';
+  display: block;
+  height: 4px;
+  background: #f3db11;
+  margin: 15px auto 0;
+  border-radius: 2px;
+  width: 0;
+  animation: expandLine 1s ease-out 0.5s forwards;
+}
+
+.accueil h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  max-width: 800px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.3s forwards;
+}
+
+/* --- Section Services --- */
+.section-services {
+  padding: 60px 5%;
+  text-align: center;
+  background-color: #f8f9fa; /* Léger gris pour détacher du header */
+}
+
+.section-services h1 {
+  margin-bottom: 10px;
+  color: #0066cc;
+  font-size: 2.3rem;
+}
+
+.group {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* Cartes des Services */
+.cat {
+  background: white;
+  border-radius: 16px; /* Bords plus arrondis pour le côté créatif */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  padding: 35px 25px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cat:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,60,130,0.1);
+}
+
+/* Conteneur de l'icône en cercle */
+.icon-wrapper {
+  width: 90px;
+  height: 90px;
+  background: #f0f7ff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 2px solid #f3db11;
+  overflow: hidden;
+}
+
+.icon-wrapper img {
+  width: 55%;
+  height: auto;
+  object-fit: contain;
+}
+
+.cat h3 {
+  color: #0066cc;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.cat p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Boutons "En savoir plus" / "Devis" */
+.btn-voir {
+  display: inline-block;
+  background: #f3db11;
+  color: #003366;
+  padding: 10px 25px;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  margin-top: auto; /* Pousse le bouton vers le bas de la carte */
+  transition: transform 0.2s, background 0.3s;
+}
+
+.btn-voir:hover {
+  background: #e2cc0f;
+  transform: scale(1.03);
+}
+
+/* --- Footer --- */
+footer {
+  background: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 25px;
+  font-size: 0.9rem;
+}
+
+/* --- Responsive Media Queries --- */
+
+/* Mode Tablette et Mobile */
+@media (max-width: 900px) {
+  .nav-links-desktop {
+    display: none; /* Cache la barre de navigation PC */
+  }
+
+  .burger {
+    display: flex; /* Affiche le menu burger sur Android/iOS */
+  }
+  
+  .nav-bande {
+    padding: 10px 20px;
+  }
+
+  .accueil h1 {
+    font-size: 2.2rem;
+  }
+
+  .accueil h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cat {
+    width: 100%; /* Les cartes prennent toute la largeur sur petit écran */
+  }
+}
+
+/* --- Correction de la section À Propos --- */
+
+.about-section {
+  padding: 40px 5%;
+  background: white;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* On force les statistiques à se mettre en ligne ou en blocs propres */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Aligne les blocs sur mobile */
+  margin-top: 20px;
+}
+
+/* Style des rectangles de statistiques */
+.stat-item {
+  background: #f3db11; /* Jaune Gozo */
+  color: #003366;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1;
+  min-width: 140px; /* Évite que ce soit trop écrasé */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.stat-item .number {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+}
+
+.stat-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* --- Style de la Page Contact --- */
+
+.contact-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 5%;
+}
+
+.contact-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap; /* Permet d'aligner l'un en dessous de l'autre sur mobile */
+}
+
+/* Le Formulaire */
+.contact-form {
+  flex: 2;
+  min-width: 300px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fbfbfb;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus, 
+.input-group select:focus, 
+.input-group textarea:focus {
+  border-color: #0066cc; /* Changement de couleur au clic */
+  outline: none;
+}
+
+/* Bouton du formulaire */
+.btn-submit {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.btn-submit:hover {
+  background: #004499;
+}
+
+/* Colonne des Infos (Atelier, Horaires, Liens) */
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  border-left: 5px solid #0066cc; /* Ligne bleue distinctive */
+}
+
+/* Modification spécifique pour les 3 boutons réseaux/appels */
+.info-card .btn-voir {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: opacity 0.2s;
+}
+
+.info-card .btn-voir:hover {
+  opacity: 0.9;
+  transform: none; /* Annule l'effet de l'accueil pour garder les boutons stables */
+}
+
+/* Responsive pour Mobile */
+@media (max-width: 850px) {
+  .contact-grid {
+    flex-direction: column; /* Force le formulaire à passer au-dessus des infos */
+  }
+  
+  .contact-form {
+    padding: 20px;
+  }
+}
+

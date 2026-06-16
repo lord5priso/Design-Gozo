@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css"/>
+  <title>À Propos - Gozo Design</title>
+</head>
+<style>
+  /* --- Style de la section Nos Valeurs --- */
+
+.values {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap; /* Aligne les cartes proprement sur les écrans Android */
+  padding: 40px 5% 60px;
+  background-color: #ffffff;
+}
+
+.value-card {
+  background: #f8f9fa; /* Gris très clair pour détacher du fond blanc */
+  border-bottom: 4px solid #f3db11; /* Ligne jaune décorative par défaut (Gozo) */
+  border-radius: 12px;
+  padding: 30px 25px;
+  width: 320px;
+  flex: 1;
+  min-width: 280px; /* Évite que les cartes ne s'écrasent sur mobile */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 102, 204, 0.08); /* Léger reflet bleu au survol */
+}
+
+.value-card h3 {
+  color: #0066cc; /* Le bleu Gozo pour les titres */
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.value-card p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Ajustement responsive pour les petits écrans */
+@media (max-width: 768px) {
+  .values {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .value-card {
+    width: 100%;
+  }
+}
+
+</style>
+<body>
+
+  <!-- HEADER (Identique aux autres pages) -->
+  <header>
+    <div class="nav-bande">
+      <div class="logo-container">
+        <img src="logo_gozo.jpg" alt="Gozo Design Logo" class="header-logo-img">
+        <div class="logo-text">
+          <p>GOZO<span>DESIGN</span></p>
+        </div>
+      </div>
+      
+      <nav class="nav-links-desktop">
+        <a href="index.html">Accueil</a>
+        <a href="service.html">Services</a>
+        <a href="propos.html" class="active">À Propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="burger" id="burgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- SIDEBAR MOBILE -->
+  <div class="sidebar" id="sideMenu">
+    <div class="close-btn" id="closeBtn">&times;</div>
+    <nav class="sidebar-links">
+      <a href="index.html">Accueil</a>
+      <a href="service.html">Services</a>
+      <a href="propos.html">À Propos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- HERO DE LA PAGE (Style Small Hero hérité du CSS) -->
+  <div class="accueil small-hero" style="height: 35vh; background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('image/about-hero.jpg') center/cover;">
+    <h1>Notre Histoire</h1>
+    <p class="subtitle" style="color: white; font-size: 1.2rem;">Créativité, Expérience et Passion du Visuel</p>
+  </div>
+
+  <!-- SECTION PRÉSENTATION -->
+  <section class="about-section">
+    <div class="about-content">
+      
+      <div class="text">
+        <h2>Qui sommes-nous ?</h2>
+        <p>
+          Fondé il y a plus de 7 ans, <strong>Gozo Design</strong> s'est imposé comme une référence solide et incontournable dans l'univers de la communication visuelle et de l'impression. Notre métier ? Transformer vos idées en réalités graphiques percutantes et durables.
+        </p>
+        <p>
+          Qu'il s'agisse de concevoir l'identité visuelle unique d'une jeune entreprise, de réaliser des impressions textiles en sérigraphie de haute précision, ou d'immortaliser vos souvenirs à travers des agrandissements photo éclatants, nous mettons notre expertise technique au service de vos projets.
+        </p>
+      </div>
+
+      <!-- STATISTIQUES (Intégration de tes données clés !) -->
+      <div class="stats">
+        <div class="stat-item">
+          <span class="number">7+</span>
+          <p>Années d'Expérience</p>
+        </div>
+        <div class="stat-item" style="background: #0066cc; color: white;">
+          <span class="number">200+</span>
+          <p>Clients Fidèles</p>
+        </div>
+        <div class="stat-item">
+          <span class="number">100%</span>
+          <p>Projets Sur-Mesure</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION NOS VALEURS -->
+  <section class="values">
+    
+    <div class="value-card">
+      <h3>Qualité Premium</h3>
+      <p>De la finesse du trait en infographie à la résistance des encres de sérigraphie, nous ne faisons aucun compromis sur la finition.</p>
+    </div>
+
+    <div class="value-card" style="border-bottom: 4px solid #0066cc;">
+      <h3>Écoute & Conseil</h3>
+      <p>Chaque client est unique. Nous vous accompagnons pas à pas pour trouver le support et le design le plus adapté à vos besoins.</p>
+    </div>
+
+    <div class="value-card">
+      <h3>Solidité</h3>
+      <p>Forts de notre ancrage dans le métier depuis des années, nous garantissons le respect des délais et un suivi professionnel rigoureux.</p>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Gozo Design. Tous droits réservés. Votre partenaire en communication visuelle.</p>
+  </footer>
+
+  <!-- SCRIPT JAVASCRIPT (Idem pour garder le burger actif) -->
+  <script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    const closeBtn = document.getElementById('closeBtn');
+    const overlay = document.getElementById('overlay');
+
+    if(burgerBtn) {
+      burgerBtn.addEventListener('click', () => {
+        sideMenu.classList.add('active');
+        overlay.classList.add('active');
+      });
+    }
+
+    const closeMenu = () => {
+      sideMenu.classList.remove('active');
+      overlay.classList.remove('active');
+    };
+
+    if(closeBtn) closeBtn.addEventListener('click', closeMenu);
+    if(overlay) overlay.addEventListener('click', closeMenu);
+  </script>
+
+</body>
+</html>

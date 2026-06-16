@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css"/>
+  <title>Contactez-nous - Gozo Design</title>
+</head>
+<body>
+
+  <!-- HEADER (Identique aux autres pages) -->
+  <header>
+    <div class="nav-bande">
+      <div class="logo-container">
+        <img src="logo_gozo.jpg" alt="Gozo Design Logo" class="header-logo-img">
+        <div class="logo-text">
+          <p>GOZO<span>DESIGN</span></p>
+        </div>
+      </div>
+      
+      <nav class="nav-links-desktop">
+        <a href="index.html">Accueil</a>
+        <a href="service.html">Services</a>
+        <a href="propos.html">À Propos</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+
+      <div class="burger" id="burgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- SIDEBAR MOBILE -->
+  <div class="sidebar" id="sideMenu">
+    <div class="close-btn" id="closeBtn">&times;</div>
+    <nav class="sidebar-links">
+      <a href="index.html">Accueil</a>
+      <a href="service.html">Services</a>
+      <a href="propos.html">À Propos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- HERO DE LA PAGE -->
+  <div class="accueil small-hero" style="height: 35vh; background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('image/contact-hero.jpg') center/cover;">
+    <h1>Contactez-nous</h1>
+    <p class="subtitle" style="color: white; font-size: 1.2rem;">Passez votre commende</p>
+  </div>
+
+  <!-- SECTION PRINCIPALE -->
+  <div class="contact-container">
+    <div class="contact-grid" style="margin-top: 40px;">
+      
+      <!-- FORMULAIRE DE CONTACT (Envoi vers ton futur script PHP) -->
+      <form action="traitement_contact.php" method="POST" class="contact-form">
+        <h2 style="color: #0066cc; margin-bottom: 20px;">Laissez un message</h2>
+        
+        <div class="input-group">
+          <label for="nom">Nom complet</label>
+          <input type="text" id="nom" name="nom" required placeholder="Votre nom ou nom d'entreprise">
+        </div>
+        
+        <div class="input-group">
+          <label for="email">Adresse Email</label>
+          <input type="email" id="email" name="email" required placeholder="exemple@domaine.com">
+        </div>
+
+        <div class="input-group">
+          <label for="service">Service concerné</label>
+          <select id="service" name="service">
+            <option value="infographie">Infographie / Design</option>
+            <option value="serigraphie">Sérigraphie / Textile</option>
+            <option value="photo">Photos & Grand Format</option>
+            <option value="autre">Autre demande</option>
+          </select>
+        </div>
+        
+        <div class="input-group">
+          <label for="message">Votre projet en quelques mots</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Décrivez vos besoins..."></textarea>
+        </div>
+        
+        <button type="submit" class="btn-submit">Envoyer la demande</button>
+      </form>
+
+      <!-- INFOS DE L'ENTREPRISE & BOUTONS SOCIAUX -->
+      <div class="contact-info">
+        
+        <!-- Localisation et Horaires -->
+        <div class="info-card">
+          <h3 style="color: #0066cc; margin-bottom: 10px;">Notre Atelier</h3>
+          <p>📍 <strong>Douala</strong>, situé à <strong>Ange Raphaël</strong></p>
+          <p style="margin-top: 10px;"> Cameroun</p>
+        </div>
+
+        <div class="info-card" style="border-left: 5px solid #f3db11;">
+          <h3 style="color: #0066cc; margin-bottom: 10px;">Horaires d'Ouverture</h3>
+          <p>📆 <strong>Lundi à Vendredi :</strong> 8h - 20h</p>
+          <p>📆 <strong>Samedi :</strong> 8h - 17h</p>
+        </div>
+
+        <!-- LES TROIS BOUTONS DEMANDÉS -->
+        <div class="info-card" style="background: #f8f9fa;">
+          <h3 style="color: #0066cc; margin-bottom: 15px; text-align: center;"> Liens Rapides</h3>
+          
+          <!-- Bouton Appel Normal (Remplace 237600000000 par le vrai numéro) -->
+          <a href="tel:+237659902532" class="btn-voir" style="display: block; text-align: center; background: #0066cc; color: white; margin-bottom: 10px;">
+            📞 Telephone
+          </a>
+          
+          <!-- Bouton WhatsApp (Remplace par le bon numéro après phone=) -->
+          <a href="https://wa.me/237659902532?text=Bonjour Gozo Design je voudrai avoir vos services" target="_blank" class="btn-voir" style="display: block; text-align: center; background: #25D366; color: white; margin-bottom: 10px;">
+            💬 WhatsApp
+          </a>
+          
+          <!-- Bouton Facebook (Mets le lien de la page à la place du #) -->
+          <a href="https://www.facebook.com/share/1EaTEFJpTW/?mibextid=wwXIfr" target="_blank" class="btn-voir" style="display: block; text-align: center; background: #1877F2; color: white; margin-bottom: 0;">
+            🔵 Page Facebook
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Gozo Design. Tous droits réservés. Votre partenaire en communication visuelle à Douala.</p>
+  </footer>
+
+  <!-- SCRIPT BURGER -->
+  <script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    const closeBtn = document.getElementById('closeBtn');
+    const overlay = document.getElementById('overlay');
+
+    if(burgerBtn) {
+      burgerBtn.addEventListener('click', () => {
+        sideMenu.classList.add('active');
+        overlay.classList.add('active');
+      });
+    }
+
+    const closeMenu = () => {
+      sideMenu.classList.remove('active');
+      overlay.classList.remove('active');
+    };
+
+    if(closeBtn) closeBtn.addEventListener('click', closeMenu);
+    if(overlay) overlay.addEventListener('click', closeMenu);
+  </script>
+
+</body>
+</html>
